@@ -1,0 +1,66 @@
+.variable-editor-wrapper {
+  position: relative;
+  .editor-wrapper {
+    padding-right: 1.5rem;
+  }
+  .variable-editor-expand-icon {
+    position: absolute;
+    top: calc(50% + 1px);
+    right: 0;
+    transform: translate(-0.2rem, -50%);
+    border-radius: 4px;
+    padding: 4px 2px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.variable-editor-modal.arco-modal {
+  width: 60vw;
+  max-width: 1000px;
+  .arco-modal-content {
+    padding: 0 2px;
+  }
+
+  .variable-render-error {
+    padding: 0.4rem 1rem;
+    color: red;
+    word-break: break-all;
+  }
+
+  .variable-editor {
+    height: 120px;
+    .editor-wrapper {
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+  }
+}
+
+.variable-editor {
+  & > .editor-wrapper {
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-fill-2);
+    cursor: text;
+    overflow: auto;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  &.has-error {
+    & > .editor-wrapper {
+      outline: 1px solid red;
+    }
+  }
+
+  &.is-disabled > .editor-wrapper {
+    background-color: var(--color-fill-2);
+    cursor: not-allowed;
+    color: var(--color-text-4);
+    -webkit-text-fill-color: var(--color-text-4);
+  }
+}
